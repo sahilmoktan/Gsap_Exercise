@@ -1,13 +1,18 @@
-var tl = gsap.timeline()
+var tl = gsap.timeline();
 
-tl.from('#nav',{
-    
-    opacity:0,
-})
-
-
-
-
+gsap.to("#page1 h1", {
+  transform: "translatex(-100%)",
+  fontWeight:100,
+  scrollTrigger: {
+    trigger: "#page1",
+    scroller: "body",
+    // markers: true,
+    start: "top 0%",
+    end:'top -200%',
+    scrub:2,
+    pin:true
+  },
+});
 
 // tl.from('#nav h1, #nav h4, #nav h3 ',{
 //     y:-80,
@@ -16,9 +21,8 @@ tl.from('#nav',{
 //     opacity:0,
 //     stagger:0.2,
 //     // rotate:360,
-    
-// })
 
+// })
 
 // tl.from('#left h1',{
 // x:-500,
@@ -44,6 +48,6 @@ tl.from('#nav',{
 //     scroller:'body',
 //     // markers:true,
 //     start: 'top 70%'
-    
+
 // }
 // })
