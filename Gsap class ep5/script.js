@@ -14,15 +14,15 @@ gsap.to("#page1 h1", {
   },
 });
 
-// tl.from('#nav h1, #nav h4, #nav h3 ',{
-//     y:-80,
-//     duration:0.5,
-//     delay:0.5,
-//     opacity:0,
-//     stagger:0.2,
-//     // rotate:360,
+tl.from('#nav h1, #nav_p2 h2, #nav_p2 span' ,{
+    y:80,
+    duration:1,
+    delay:0.5,
+    // opacity:0,
+    stagger:0.2,
+    // rotate:360,
 
-// })
+})
 
 // tl.from('#left h1',{
 // x:-500,
