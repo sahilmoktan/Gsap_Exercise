@@ -3,6 +3,8 @@
 //     smooth: true
 // });
 
+function init(){
+
 gsap.registerPlugin(ScrollTrigger);
 
 // Using Locomotive Scroll from Locomotive https://github.com/locomotivemtl/locomotive-scroll
@@ -27,21 +29,44 @@ ScrollTrigger.scrollerProxy("#main", {
 });
 
 
-
 // each time the window updates, we should refresh ScrollTrigger and then update LocomotiveScroll. 
 ScrollTrigger.addEventListener("refresh", () => locoScroll.update());
 
 // after everything is set up, refresh() ScrollTrigger and update LocomotiveScroll because padding may have been added for pinning, etc.
 ScrollTrigger.refresh();
 
+}
+init()
 
-gsap.to('#page2, box',{
-    scale:2,
+
+gsap.to('#page1 #box',{
+    scale:0.5,
+    delay:0.5,
+    duration:2,
+   
+})
+
+gsap.to('#page2 #box',{
+    scale:0.5,
     delay:0.5,
     duration:2,
     scrollTrigger:{
-        trigger:'#page2, box',
-        scroller:'body',
+        trigger:'#page2 #box',
+        scroller:'#main',
+        markers:true,
+        start:'top 60%',
+        end:'top 30%',
+        scrub:2
+    }
+})
+
+gsap.to('#page3 #box',{
+    scale:0.5,
+    delay:0.5,
+    duration:2,
+    scrollTrigger:{
+        trigger:'#page3 #box',
+        scroller:'#main',
         markers:true,
         start:'top 60%',
         end:'top 30%',
